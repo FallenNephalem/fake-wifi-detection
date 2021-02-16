@@ -18,7 +18,7 @@ while True:
     else:
         params = open('params.json', 'r')
         params_dict = json.loads(params.read())
-        if True: #(params_dict['SSID'] != c.ssid) | (params_dict['Mac'] != c.address) | (params_dict['RSSI'] != c.signal)
+        if (params_dict['SSID'] != c.ssid) | (params_dict['Mac'] != c.address) | (params_dict['RSSI'] != c.signal):
             log = open('log.txt', 'a')
             log.write('SSID: {0}, Mac: {1}, RSSI: {2} at {3} \n'.format(c.ssid, c.address, c.signal, datetime.now().time()))
             params.close()
